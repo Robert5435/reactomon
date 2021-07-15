@@ -20,6 +20,9 @@ const Navbar = () => {
           <NavLink to='/types' activeStyle>
             Types
           </NavLink>
+          <NavLink to='/spacing' activeStyle>
+            spacing
+          </NavLink>
         </NavMenu>
       </Nav>
     </>

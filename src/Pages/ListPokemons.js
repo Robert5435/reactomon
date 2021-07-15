@@ -1,26 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import getPokemonsAPI from '../components/GetPokemons';
-import GetPokemonsAPI from '../components/GetPokemons';
-  
+import getPokemonsAPI from '../components/PokemonsList';
+import GetPokemonsAPI from '../components/PokemonsList';
+import Paper from '@material-ui/core/Paper';
 
 
-function ListPokemons(pokemons){
-  const dispalyPokemons = (pokemons) => {
-    const pokemoniimasii = pokemons.pokemons
-    console.log(pokemoniimasii)
-    pokemoniimasii.map((pokemon,index)=>{
+
+function ListPokemons(props){
+
+
+  const dispalyPokemons = (props) => {
+    const pokemons = props.pokemons
+    console.log(pokemons)
+    pokemons.map((pokemon,index) => {
       console.log(pokemon)
+      return(
+        <div>asa</div>
+      )
     })
-    return(<div>
-
-      <h3 className="pokemon_name">{}</h3>
-    </div>)
   }
-
+  
   return(
     <>
-    {dispalyPokemons(pokemons)}
+    <Paper elevation={3} >
+    {props.pokemons.map((pokemon, index) => 
+  {
+    return (<li key={index}>{pokemon.name} , {pokemon.url}</li>);
+  }
+)}
+</Paper>
     </>
   )
 }
